@@ -2,8 +2,11 @@ package com.project.eneler.controller.admin;
 
 
 import com.project.eneler.model.dto.request.UserRequest;
+import com.project.eneler.model.dto.request.VideoRequest;
 import com.project.eneler.model.dto.response.UserResponse;
+import com.project.eneler.model.dto.response.VideoResponse;
 import com.project.eneler.service.UserService;
+import com.project.eneler.service.VideoService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,10 +27,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class AdminController {
 
   private final UserService userService;
+  private final VideoService videoService;
 
   // work with users
 
-  @GetMapping("/user-list")
+  @GetMapping("/user/list")
   public ResponseEntity<List<UserResponse>> getUserList() {
     return ResponseEntity.ok(userService.getList());
   }
@@ -51,5 +55,26 @@ public class AdminController {
   @DeleteMapping("/user/delete/{user_id}")
   public ResponseEntity<Boolean> deleteUser(@PathVariable("user_id") String userId) {
     return ResponseEntity.ok(userService.deleteUser(userId));
+  }
+
+  // work with videos
+  @GetMapping("/video/list")
+  public ResponseEntity<List<VideoResponse>> getVideoList() {
+    return ResponseEntity.ok(videoService.getList());
+  }
+
+  @GetMapping("/video/{video_id}")
+  public ResponseEntity<VideoResponse> getVideo(@PathVariable("video_id") String videoId) {
+    return ResponseEntity.ok(videoService.getVideo(videoId));
+  }
+
+  @PostMapping("/video/create")
+  public ResponseEntity<Boolean> createVideo(@RequestBody VideoRequest videoRequest) {
+    return ResponseEntity.ok(videoService.createVideo(videoRequest));
+  }
+
+  @DeleteMapping("/video/delete/{video_id}")
+  public ResponseEntity<Boolean> deleteVideo(@PathVariable("video_id") String videoId) {
+    return ResponseEntity.ok(videoService.deleteVideo(videoId));
   }
 }

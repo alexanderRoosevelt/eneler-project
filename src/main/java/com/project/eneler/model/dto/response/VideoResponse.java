@@ -12,5 +12,5 @@ public class VideoResponse {
   private String url;
   private String imageUrl;
   private String access;
-  private boolean watchedUntilEnd;
+  private Boolean watchedUntilEnd;
 }
