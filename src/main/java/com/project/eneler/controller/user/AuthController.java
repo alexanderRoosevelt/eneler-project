@@ -1,4 +1,4 @@
-package com.project.eneler.controller;
+package com.project.eneler.controller.user;
 
 
 import com.project.eneler.exception.AuthException;

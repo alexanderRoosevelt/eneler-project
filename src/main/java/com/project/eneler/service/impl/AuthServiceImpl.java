@@ -9,6 +9,7 @@ import com.project.eneler.repository.AuthRepository;
 import com.project.eneler.service.AuthService;
 import java.time.LocalDateTime;
 import java.util.Optional;
+import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -34,7 +35,7 @@ public class AuthServiceImpl implements AuthService {
 
     if (userEntityOptional.isPresent()) {
       return AuthResponse.builder()
-          .userId(userEntityOptional.get().getId().toString())
+          .userId(userEntityOptional.get().getUserTokenId().toString())
           .email(userEntityOptional.get().getEmail())
           .registered(true)
           .username(userEntityOptional.get().getUsername())
@@ -48,10 +49,11 @@ public class AuthServiceImpl implements AuthService {
     user.setCreatedDate(LocalDateTime.now());
     user.setUsername(authRequest.getUsername());
     user.setRegistered(true);
+    user.setUserTokenId(UUID.randomUUID());
     UserEntity savedUser = authRepository.save(user);
 
     return AuthResponse.builder()
-        .userId(savedUser.getId().toString())
+        .userId(savedUser.getUserTokenId().toString())
         .email(savedUser.getEmail())
         .registered(false)
         .username(savedUser.getUsername())
