@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
     for (UserEntity user : userEntityList) {
       result.add(
           UserResponse.builder()
-              .userId(user.getUserTokenId().toString())
+              .userId(user.getUserTokenId() == null ? "" : user.getUserTokenId().toString())
               .email(user.getEmail())
               .registered(user.isRegistered())
               .role(user.getRole().name())
@@ -59,7 +59,7 @@ public class UserServiceImpl implements UserService {
     UserEntity user = userResponse.get();
 
     return UserResponse.builder()
-        .userId(user.getUserTokenId().toString())
+        .userId(user.getUserTokenId() == null ? "" : user.getUserTokenId().toString())
         .email(user.getEmail())
         .registered(user.isRegistered())
         .role(user.getRole().name())
@@ -74,6 +74,7 @@ public class UserServiceImpl implements UserService {
       UserEntity user = new UserEntity();
       user.setCreatedDate(LocalDateTime.now());
       user.setRegistered(true);
+      user.setUserTokenId(UUID.randomUUID());
       user.setEmail(userRequest.getEmail());
       user.setUsername(userRequest.getUsername());
       user.setRole(Role.valueOf(userRequest.getRole()));
