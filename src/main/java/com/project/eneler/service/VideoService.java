@@ -1,6 +1,6 @@
 package com.project.eneler.service;
 
-import com.project.eneler.model.dto.request.VideoRequest;
+import com.project.eneler.model.dto.request.video.VideoRequest;
 import com.project.eneler.model.dto.response.VideoResponse;
 import java.util.List;
 

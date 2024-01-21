@@ -1,10 +1,12 @@
 package com.project.eneler.controller.admin;
 
 
-import com.project.eneler.model.dto.request.UserRequest;
-import com.project.eneler.model.dto.request.VideoRequest;
+import com.project.eneler.model.dto.request.questions.QuestionRequest;
+import com.project.eneler.model.dto.request.user.UserRequest;
+import com.project.eneler.model.dto.request.video.VideoRequest;
 import com.project.eneler.model.dto.response.UserResponse;
 import com.project.eneler.model.dto.response.VideoResponse;
+import com.project.eneler.service.QuestionService;
 import com.project.eneler.service.UserService;
 import com.project.eneler.service.VideoService;
 import java.util.List;
@@ -28,6 +30,7 @@ public class AdminController {
 
   private final UserService userService;
   private final VideoService videoService;
+  private final QuestionService questionService;
 
   // work with users
 
@@ -76,5 +79,10 @@ public class AdminController {
   @DeleteMapping("/video/delete/{video_id}")
   public ResponseEntity<Boolean> deleteVideo(@PathVariable("video_id") String videoId) {
     return ResponseEntity.ok(videoService.deleteVideo(videoId));
+  }
+
+  @PostMapping("/question/add")
+  public ResponseEntity<Boolean> createQuestion(@RequestBody QuestionRequest questionRequest) {
+    return ResponseEntity.ok(questionService.createQuestions(questionRequest));
   }
 }

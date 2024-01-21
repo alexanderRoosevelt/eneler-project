@@ -1,6 +1,6 @@
 package com.project.eneler.service.impl;
 
-import com.project.eneler.model.dto.request.VideoRequest;
+import com.project.eneler.model.dto.request.video.VideoRequest;
 import com.project.eneler.model.dto.response.VideoResponse;
 import com.project.eneler.model.entity.VideoEntity;
 import com.project.eneler.repository.VideoRepository;

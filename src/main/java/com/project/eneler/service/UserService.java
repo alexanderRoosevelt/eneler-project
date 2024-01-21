@@ -1,6 +1,6 @@
 package com.project.eneler.service;
 
-import com.project.eneler.model.dto.request.UserRequest;
+import com.project.eneler.model.dto.request.user.UserRequest;
 import com.project.eneler.model.dto.response.UserResponse;
 import java.util.List;
 

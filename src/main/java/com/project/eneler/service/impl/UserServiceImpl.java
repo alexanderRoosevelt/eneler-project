@@ -1,6 +1,6 @@
 package com.project.eneler.service.impl;
 
-import com.project.eneler.model.dto.request.UserRequest;
+import com.project.eneler.model.dto.request.user.UserRequest;
 import com.project.eneler.model.dto.response.UserResponse;
 import com.project.eneler.model.entity.UserEntity;
 import com.project.eneler.model.enums.Role;

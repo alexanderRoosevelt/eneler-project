@@ -2,7 +2,7 @@ package com.project.eneler.controller.user;
 
 
 import com.project.eneler.exception.AuthException;
-import com.project.eneler.model.dto.request.AuthRequest;
+import com.project.eneler.model.dto.request.user.AuthRequest;
 import com.project.eneler.model.dto.response.AuthResponse;
 import com.project.eneler.service.AuthService;
 import lombok.RequiredArgsConstructor;

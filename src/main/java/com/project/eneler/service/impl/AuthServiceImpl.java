@@ -1,7 +1,7 @@
 package com.project.eneler.service.impl;
 
 import com.project.eneler.exception.AuthException;
-import com.project.eneler.model.dto.request.AuthRequest;
+import com.project.eneler.model.dto.request.user.AuthRequest;
 import com.project.eneler.model.dto.response.AuthResponse;
 import com.project.eneler.model.entity.UserEntity;
 import com.project.eneler.model.enums.Role;

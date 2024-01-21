@@ -1,7 +1,7 @@
 package com.project.eneler.service.impl;
 
 import com.project.eneler.exception.AboutInfoException;
-import com.project.eneler.model.dto.request.AboutUserRequest;
+import com.project.eneler.model.dto.request.user.AboutUserRequest;
 import com.project.eneler.model.entity.AboutUserEntity;
 import com.project.eneler.model.entity.UserEntity;
 import com.project.eneler.repository.AboutUserRepository;

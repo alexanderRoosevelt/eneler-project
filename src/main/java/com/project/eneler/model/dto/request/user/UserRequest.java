@@ -1,4 +1,4 @@
-package com.project.eneler.model.dto.request;
+package com.project.eneler.model.dto.request.user;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

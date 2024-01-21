@@ -2,7 +2,7 @@ package com.project.eneler.controller.user;
 
 
 import com.project.eneler.exception.AboutInfoException;
-import com.project.eneler.model.dto.request.AboutUserRequest;
+import com.project.eneler.model.dto.request.user.AboutUserRequest;
 import com.project.eneler.service.AboutUserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
